@@ -1,7 +1,7 @@
 package com.airbnb.lottie.network;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.NonNull;
+import com.airbnb.lottie.annotation.Nullable;
 
 import java.io.Closeable;
 import java.io.IOException;

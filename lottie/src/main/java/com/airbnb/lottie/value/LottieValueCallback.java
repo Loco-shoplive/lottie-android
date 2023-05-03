@@ -1,8 +1,8 @@
 package com.airbnb.lottie.value;
 
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;

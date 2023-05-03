@@ -4,7 +4,7 @@ import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.RectF;
 
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieProperty;

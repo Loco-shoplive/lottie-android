@@ -1,17 +1,17 @@
 package com.airbnb.lottie.model;
 
-import static androidx.annotation.RestrictTo.Scope.LIBRARY;
+import static com.airbnb.lottie.annotation.RestrictTo.Scope.LIBRARY;
 
 import android.annotation.SuppressLint;
 import android.graphics.PointF;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.NonNull;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 /**
  * One cubic path operation. CubicCurveData is structured such that it is easy to iterate through
  * it and build a path. However, it is modeled differently than most path operations.
- *
+ * <p>
  * CubicCurveData
  * |                     - vertex
  * |                   /
@@ -20,11 +20,11 @@ import androidx.annotation.RestrictTo;
  * |  |
  * | /
  * --------------------------
- *
+ * <p>
  * When incrementally building a path, it will already have a "current point" so that is
  * not captured in this data structure.
  * The control points here represent {@link android.graphics.Path#cubicTo(float, float, float, float, float, float)}.
- *
+ * <p>
  * Most path operations are centered around a vertex and its in control point and out control point like this:
  * |           outCp
  * |          /

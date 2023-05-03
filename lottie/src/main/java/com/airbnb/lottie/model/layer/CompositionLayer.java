@@ -4,11 +4,9 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.util.Log;
 
-import androidx.annotation.FloatRange;
-import androidx.annotation.Nullable;
-import androidx.collection.LongSparseArray;
+import com.airbnb.lottie.annotation.FloatRange;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieComposition;
@@ -22,7 +20,9 @@ import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.LottieValueCallback;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.function.BiConsumer;
 
 public class CompositionLayer extends BaseLayer {
   @Nullable private BaseKeyframeAnimation<Float, Float> timeRemapping;
@@ -50,8 +50,8 @@ public class CompositionLayer extends BaseLayer {
       this.timeRemapping = null;
     }
 
-    LongSparseArray<BaseLayer> layerMap =
-        new LongSparseArray<>(composition.getLayers().size());
+    LinkedHashMap<Long, BaseLayer> layerMap =
+        new LinkedHashMap<>(composition.getLayers().size());
 
     BaseLayer mattedLayer = null;
     for (int i = layerModels.size() - 1; i >= 0; i--) {
@@ -76,8 +76,7 @@ public class CompositionLayer extends BaseLayer {
     }
 
     for (int i = 0; i < layerMap.size(); i++) {
-      long key = layerMap.keyAt(i);
-      BaseLayer layerView = layerMap.get(key);
+      BaseLayer layerView = (BaseLayer) layerMap.values().toArray()[i];
       // This shouldn't happen but it appears as if sometimes on pre-lollipop devices when
       // compiled with d8, layerView is null sometimes.
       // https://github.com/airbnb/lottie-android/issues/524

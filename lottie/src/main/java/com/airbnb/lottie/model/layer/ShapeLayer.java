@@ -4,8 +4,8 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.RectF;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.NonNull;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieDrawable;

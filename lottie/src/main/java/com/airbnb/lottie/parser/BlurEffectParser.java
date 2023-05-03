@@ -1,6 +1,6 @@
 package com.airbnb.lottie.parser;
 
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.model.content.BlurEffect;

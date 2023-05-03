@@ -1,6 +1,6 @@
 package com.airbnb.lottie.network;
 
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 /**
  * Helpers for known Lottie file types.

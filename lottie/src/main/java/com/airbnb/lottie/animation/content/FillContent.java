@@ -10,7 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieDrawable;

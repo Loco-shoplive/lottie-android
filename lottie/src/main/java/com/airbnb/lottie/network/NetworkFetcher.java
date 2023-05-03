@@ -3,10 +3,10 @@ package com.airbnb.lottie.network;
 import android.content.Context;
 import android.util.Pair;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
-import androidx.annotation.WorkerThread;
+import com.airbnb.lottie.annotation.NonNull;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.WorkerThread;
 
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieCompositionFactory;

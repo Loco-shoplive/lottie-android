@@ -2,7 +2,7 @@ package com.airbnb.lottie.model.animatable;
 
 import android.graphics.PointF;
 
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieDrawable;

@@ -1,7 +1,7 @@
 package com.airbnb.lottie.network;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.NonNull;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

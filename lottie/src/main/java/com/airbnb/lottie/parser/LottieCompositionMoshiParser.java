@@ -2,9 +2,6 @@ package com.airbnb.lottie.parser;
 
 import android.graphics.Rect;
 
-import androidx.collection.LongSparseArray;
-import androidx.collection.SparseArrayCompat;
-
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieImageAsset;
 import com.airbnb.lottie.model.Font;
@@ -18,6 +15,7 @@ import com.airbnb.lottie.utils.Utils;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,7 +40,7 @@ public class LottieCompositionMoshiParser {
     float startFrame = 0f;
     float endFrame = 0f;
     float frameRate = 0f;
-    final LongSparseArray<Layer> layerMap = new LongSparseArray<>();
+    final LinkedHashMap<Long, Layer> layerMap = new LinkedHashMap<>();
     final List<Layer> layers = new ArrayList<>();
     int width = 0;
     int height = 0;
@@ -50,7 +48,7 @@ public class LottieCompositionMoshiParser {
     Map<String, LottieImageAsset> images = new HashMap<>();
     Map<String, Font> fonts = new HashMap<>();
     List<Marker> markers = new ArrayList<>();
-    SparseArrayCompat<FontCharacter> characters = new SparseArrayCompat<>();
+    LinkedHashMap<Long, FontCharacter> characters = new LinkedHashMap<>();
 
     LottieComposition composition = new LottieComposition();
     reader.beginObject();
@@ -113,7 +111,7 @@ public class LottieCompositionMoshiParser {
   }
 
   private static void parseLayers(JsonReader reader, LottieComposition composition,
-      List<Layer> layers, LongSparseArray<Layer> layerMap) throws IOException {
+      List<Layer> layers, LinkedHashMap<Long, Layer> layerMap) throws IOException {
     int imageCount = 0;
     reader.beginArray();
     while (reader.hasNext()) {
@@ -150,7 +148,7 @@ public class LottieCompositionMoshiParser {
       String id = null;
       // For precomps
       List<Layer> layers = new ArrayList<>();
-      LongSparseArray<Layer> layerMap = new LongSparseArray<>();
+      LinkedHashMap<Long, Layer> layerMap = new LinkedHashMap<>();
       // For images
       int width = 0;
       int height = 0;
@@ -224,11 +222,11 @@ public class LottieCompositionMoshiParser {
 
   private static void parseChars(
       JsonReader reader, LottieComposition composition,
-      SparseArrayCompat<FontCharacter> characters) throws IOException {
+      LinkedHashMap<Long, FontCharacter> characters) throws IOException {
     reader.beginArray();
     while (reader.hasNext()) {
       FontCharacter character = FontCharacterParser.parse(reader, composition);
-      characters.put(character.hashCode(), character);
+      characters.put((long) character.hashCode(), character);
     }
     reader.endArray();
   }

@@ -1,13 +1,9 @@
 package com.airbnb.lottie.parser;
 
-import android.graphics.PointF;
-
-import androidx.annotation.Nullable;
 
 import com.airbnb.lottie.LottieComposition;
-import com.airbnb.lottie.model.animatable.AnimatableFloatValue;
+import com.airbnb.lottie.annotation.Nullable;
 import com.airbnb.lottie.model.animatable.AnimatableValue;
-import com.airbnb.lottie.model.content.RectangleShape;
 import com.airbnb.lottie.model.content.RoundedCorners;
 import com.airbnb.lottie.parser.moshi.JsonReader;
 

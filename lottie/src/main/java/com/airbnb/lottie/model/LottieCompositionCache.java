@@ -1,11 +1,11 @@
 package com.airbnb.lottie.model;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
-import androidx.annotation.VisibleForTesting;
-import androidx.collection.LruCache;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 import com.airbnb.lottie.LottieComposition;
+
+import java.util.LinkedHashMap;
 
 @RestrictTo(RestrictTo.Scope.LIBRARY)
 public class LottieCompositionCache {
@@ -16,9 +16,9 @@ public class LottieCompositionCache {
     return INSTANCE;
   }
 
-  private final LruCache<String, LottieComposition> cache = new LruCache<>(20);
+  private LinkedHashMap<String, LottieComposition> cache = new LinkedHashMap<>(20);
 
-  @VisibleForTesting LottieCompositionCache() {
+  LottieCompositionCache() {
   }
 
   @Nullable
@@ -37,7 +37,7 @@ public class LottieCompositionCache {
   }
 
   public void clear() {
-    cache.evictAll();
+    cache.clear();
   }
 
   /**
@@ -45,6 +45,6 @@ public class LottieCompositionCache {
    * This must be {@literal >} 0.
    */
   public void resize(int size) {
-    cache.resize(size);
+    cache = new LinkedHashMap<>(size);
   }
 }

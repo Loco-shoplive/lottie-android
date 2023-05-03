@@ -1,6 +1,6 @@
 package com.airbnb.lottie.model.animatable;
 
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.Nullable;
 
 public class AnimatableTextProperties {
 

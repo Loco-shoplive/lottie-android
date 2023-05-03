@@ -21,14 +21,14 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.ImageView;
 
-import androidx.annotation.FloatRange;
-import androidx.annotation.IntDef;
-import androidx.annotation.IntRange;
-import androidx.annotation.MainThread;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.FloatRange;
+import com.airbnb.lottie.annotation.IntDef;
+import com.airbnb.lottie.annotation.IntRange;
+import com.airbnb.lottie.annotation.MainThread;
+import com.airbnb.lottie.annotation.NonNull;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RequiresApi;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 import com.airbnb.lottie.animation.LPaint;
 import com.airbnb.lottie.manager.FontAssetManager;

@@ -1,10 +1,11 @@
 package com.airbnb.lottie.model;
 
-import static androidx.annotation.RestrictTo.Scope.LIBRARY;
+import static com.airbnb.lottie.annotation.RestrictTo.Scope.LIBRARY;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
-import androidx.core.util.Pair;
+import android.util.Pair;
+
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 /**
  * Non final version of {@link Pair}.

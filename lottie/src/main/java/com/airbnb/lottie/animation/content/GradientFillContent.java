@@ -14,9 +14,8 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.collection.LongSparseArray;
+import com.airbnb.lottie.annotation.NonNull;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieComposition;
@@ -35,6 +34,7 @@ import com.airbnb.lottie.utils.MiscUtils;
 import com.airbnb.lottie.value.LottieValueCallback;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class GradientFillContent
@@ -46,8 +46,8 @@ public class GradientFillContent
   @NonNull private final String name;
   private final boolean hidden;
   private final BaseLayer layer;
-  private final LongSparseArray<LinearGradient> linearGradientCache = new LongSparseArray<>();
-  private final LongSparseArray<RadialGradient> radialGradientCache = new LongSparseArray<>();
+  private final LinkedHashMap<Long, LinearGradient> linearGradientCache = new LinkedHashMap<>();
+  private final LinkedHashMap<Long, RadialGradient> radialGradientCache = new LinkedHashMap<>();
   private final Path path = new Path();
   private final Paint paint = new LPaint(Paint.ANTI_ALIAS_FLAG);
   private final RectF boundsRect = new RectF();
@@ -192,7 +192,7 @@ public class GradientFillContent
     float[] positions = gradientColor.getPositions();
     gradient = new LinearGradient(startPoint.x, startPoint.y, endPoint.x, endPoint.y, colors,
         positions, Shader.TileMode.CLAMP);
-    linearGradientCache.put(gradientHash, gradient);
+    linearGradientCache.put((long) gradientHash, gradient);
     return gradient;
   }
 
@@ -216,7 +216,7 @@ public class GradientFillContent
       r = 0.001f;
     }
     gradient = new RadialGradient(x0, y0, r, colors, positions, Shader.TileMode.CLAMP);
-    radialGradientCache.put(gradientHash, gradient);
+    radialGradientCache.put((long) gradientHash, gradient);
     return gradient;
   }
 

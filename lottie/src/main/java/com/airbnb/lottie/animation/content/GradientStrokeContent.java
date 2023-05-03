@@ -8,8 +8,8 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 
-import androidx.annotation.Nullable;
-import androidx.collection.LongSparseArray;
+import com.airbnb.lottie.L;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieProperty;
@@ -21,6 +21,8 @@ import com.airbnb.lottie.model.content.GradientType;
 import com.airbnb.lottie.model.layer.BaseLayer;
 import com.airbnb.lottie.value.LottieValueCallback;
 
+import java.util.LinkedHashMap;
+
 public class GradientStrokeContent extends BaseStrokeContent {
   /**
    * Cache the gradients such that it runs at 30fps.
@@ -29,8 +31,8 @@ public class GradientStrokeContent extends BaseStrokeContent {
 
   private final String name;
   private final boolean hidden;
-  private final LongSparseArray<LinearGradient> linearGradientCache = new LongSparseArray<>();
-  private final LongSparseArray<RadialGradient> radialGradientCache = new LongSparseArray<>();
+  private final LinkedHashMap<Long, LinearGradient> linearGradientCache = new LinkedHashMap<>();
+  private final LinkedHashMap<Long, RadialGradient> radialGradientCache = new LinkedHashMap<>();
   private final RectF boundsRect = new RectF();
 
   private final GradientType type;
@@ -102,7 +104,7 @@ public class GradientStrokeContent extends BaseStrokeContent {
     float x1 = endPoint.x;
     float y1 = endPoint.y;
     gradient = new LinearGradient(x0, y0, x1, y1, colors, positions, Shader.TileMode.CLAMP);
-    linearGradientCache.put(gradientHash, gradient);
+    linearGradientCache.put((long) gradientHash, gradient);
     return gradient;
   }
 
@@ -123,7 +125,7 @@ public class GradientStrokeContent extends BaseStrokeContent {
     float y1 = endPoint.y;
     float r = (float) Math.hypot(x1 - x0, y1 - y0);
     gradient = new RadialGradient(x0, y0, r, colors, positions, Shader.TileMode.CLAMP);
-    radialGradientCache.put(gradientHash, gradient);
+    radialGradientCache.put((long) gradientHash, gradient);
     return gradient;
   }
 

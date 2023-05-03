@@ -9,8 +9,7 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 
-import androidx.annotation.Nullable;
-import androidx.collection.LongSparseArray;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieDrawable;
@@ -31,6 +30,7 @@ import com.airbnb.lottie.value.LottieValueCallback;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -47,7 +47,7 @@ public class TextLayer extends BaseLayer {
     setStyle(Style.STROKE);
   }};
   private final Map<FontCharacter, List<ContentGroup>> contentsForCharacter = new HashMap<>();
-  private final LongSparseArray<String> codePointCache = new LongSparseArray<>();
+  private final LinkedHashMap<Long, String> codePointCache = new LinkedHashMap<>();
   /**
    * If this is paragraph text, one line may wrap depending on the size of the document data box.
    */
@@ -513,7 +513,7 @@ public class TextLayer extends BaseLayer {
       i += Character.charCount(codePoint);
     }
     String str = stringBuilder.toString();
-    codePointCache.put(key, str);
+    codePointCache.put((long) key, str);
     return str;
   }
 

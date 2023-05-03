@@ -15,7 +15,7 @@ import static com.airbnb.lottie.LottieProperty.TRANSFORM_START_OPACITY;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.model.animatable.AnimatableTransform;
 import com.airbnb.lottie.model.layer.BaseLayer;

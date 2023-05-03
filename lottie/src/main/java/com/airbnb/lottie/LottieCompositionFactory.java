@@ -12,9 +12,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.util.Base64;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RawRes;
-import androidx.annotation.WorkerThread;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RawRes;
+import com.airbnb.lottie.annotation.WorkerThread;
 
 import com.airbnb.lottie.model.Font;
 import com.airbnb.lottie.model.LottieCompositionCache;

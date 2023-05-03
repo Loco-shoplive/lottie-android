@@ -11,9 +11,9 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.os.Build;
 
-import androidx.annotation.CallSuper;
-import androidx.annotation.FloatRange;
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.CallSuper;
+import com.airbnb.lottie.annotation.FloatRange;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieComposition;

@@ -2,8 +2,8 @@ package com.airbnb.lottie;
 
 import android.graphics.Bitmap;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 /**
  * Data class describing an image asset embedded in a Lottie json file.

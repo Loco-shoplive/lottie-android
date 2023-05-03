@@ -2,10 +2,9 @@ package com.airbnb.lottie;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
-import androidx.core.os.TraceCompat;
+import com.airbnb.lottie.annotation.NonNull;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 import com.airbnb.lottie.network.DefaultLottieNetworkFetcher;
 import com.airbnb.lottie.network.LottieNetworkCacheProvider;

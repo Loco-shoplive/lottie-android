@@ -1,6 +1,6 @@
 package com.airbnb.lottie.value;
 
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 /**
  * Data class for use with {@link LottieValueCallback}.

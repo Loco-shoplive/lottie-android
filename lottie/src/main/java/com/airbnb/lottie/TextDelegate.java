@@ -1,8 +1,7 @@
 package com.airbnb.lottie;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
-import androidx.annotation.VisibleForTesting;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +24,7 @@ public class TextDelegate {
   /**
    * This normally needs to be able to invalidate the view/drawable but not for the test.
    */
-  @VisibleForTesting TextDelegate() {
+  TextDelegate() {
     animationView = null;
     drawable = null;
   }

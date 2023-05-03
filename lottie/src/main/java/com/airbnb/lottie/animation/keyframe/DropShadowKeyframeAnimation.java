@@ -3,7 +3,7 @@ package com.airbnb.lottie.animation.keyframe;
 import android.graphics.Color;
 import android.graphics.Paint;
 
-import androidx.annotation.Nullable;
+import com.airbnb.lottie.annotation.Nullable;
 
 import com.airbnb.lottie.model.layer.BaseLayer;
 import com.airbnb.lottie.parser.DropShadowEffect;

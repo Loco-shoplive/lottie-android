@@ -1,8 +1,8 @@
 package com.airbnb.lottie.model;
 
-import static androidx.annotation.RestrictTo.Scope.LIBRARY;
+import static com.airbnb.lottie.annotation.RestrictTo.Scope.LIBRARY;
 
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 import com.airbnb.lottie.model.content.ShapeGroup;
 

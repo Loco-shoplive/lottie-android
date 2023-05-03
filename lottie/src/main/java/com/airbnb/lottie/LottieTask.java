@@ -3,8 +3,8 @@ package com.airbnb.lottie;
 import android.os.Handler;
 import android.os.Looper;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
+import com.airbnb.lottie.annotation.Nullable;
+import com.airbnb.lottie.annotation.RestrictTo;
 
 import com.airbnb.lottie.utils.Logger;
 

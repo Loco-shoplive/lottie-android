@@ -3,8 +3,6 @@ package com.airbnb.lottie.parser;
 import android.graphics.Color;
 import android.graphics.PointF;
 
-import androidx.annotation.ColorInt;
-
 import com.airbnb.lottie.parser.moshi.JsonReader;
 
 import java.io.IOException;
@@ -18,7 +16,7 @@ class JsonUtils {
   /**
    * [r,g,b]
    */
-  @ColorInt static int jsonToColor(JsonReader reader) throws IOException {
+  static int jsonToColor(JsonReader reader) throws IOException {
     reader.beginArray();
     int r = (int) (reader.nextDouble() * 255);
     int g = (int) (reader.nextDouble() * 255);
